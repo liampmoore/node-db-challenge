@@ -7,6 +7,7 @@ const taskRouter = require('../tasks/tasks-router.js');
 
 const server = express();
 
+server.use(helmet())
 server.use(logger)
 server.use(express.json())
 
@@ -14,6 +15,7 @@ server.use(express.json())
 server.get('/api/', (req, res) => {
   res.send('Welcome to the project API.\n\n You can POST projects, tasks, and project resources. You can also GET a list of projects, tasks, or project resources. \n\n/api/projects\n/api/tasks\n/api/resources')
 })
+
 server.use('/api/projects', projectRouter)
 server.use('/api/resources', resourceRouter)
 server.use('/api/tasks', taskRouter)
