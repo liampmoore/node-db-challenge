@@ -1,0 +1,21 @@
+{
+  "name": "db-challenge",
+  "version": "1.0.0",
+  "description": "Sprint challenge for SQL and data modeling.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liampmoore/node-db-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liampmoore/node-db-challenge/issues"
+  },
+  "homepage": "https://github.com/liampmoore/node-db-challenge#readme"
+}
