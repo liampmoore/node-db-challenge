@@ -2,6 +2,7 @@ const express = require('express');
 const helmet = require('helmet');
 const projectRouter = require('../projects/projects-router.js');
 const resourceRouter = require('../resources/resources-router.js');
+const taskRouter = require('../tasks/tasks-router.js');
 
 
 const server = express();
@@ -15,6 +16,7 @@ server.get('/api/', (req, res) => {
 })
 server.use('/api/projects', projectRouter)
 server.use('/api/resources', resourceRouter)
+server.use('/api/tasks', taskRouter)
 
 
 

@@ -1,14 +1,23 @@
 const db = require('../data/dbConfig');
 
 
-const get = () => {
-    return db('projects')
+const get = async () => {
+    try {
+        const projects = await db('projects');
+        return projects;
+    }
+    catch(err) {
+        console.error(err)
+    }
 }
 
 const getById = (id) => {
-    return db('projects')
+   try {const project = db.select('projects')
         .where("id", id)
-        .first();
+        .first();}
+    catch(err) {
+        console.error(err)
+    }
 }
 
 const add = async (newProject) => {

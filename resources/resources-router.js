@@ -10,7 +10,6 @@ router.get('/', (req, res) => {
             res.status(200).json(resources)
         })
         .catch(err => {
-            console.error(err)
             res.status(500).json({error: "Could not get resources. Server error."})
         })
 })

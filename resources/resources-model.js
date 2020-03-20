@@ -12,9 +12,15 @@ const get = async () => {
 }
 
 const getById = (id) => {
-    return db('resources')
-        .where("id", id)
-        .first();
+    try {
+        const resource = db.select('resources')
+            .where("id", id)
+            .first();
+        return resource;
+    }
+    catch (err) {
+        console.error(err)
+    }
 }
 
 const add = async (newResource) => {
