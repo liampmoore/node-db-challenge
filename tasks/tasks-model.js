@@ -45,7 +45,16 @@ const getByProjectId = async (id) => {
             .select("*")
             .from("tasks")
             .where("project_id", id)
-        return tasks.length !== 0 ? tasks : null;
+        const project = await db
+            .select("project_name", "project_description")
+            .from("projects")
+            .where("id", id)
+            .first()
+        const projectTasks = {
+            ...project,
+            tasks: tasks.length !== 0 ? tasks : null
+        }
+        return projectTasks;
     }
     catch(err) {
         console.error(err)

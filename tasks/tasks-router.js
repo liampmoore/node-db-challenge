@@ -24,5 +24,14 @@ router.post('/', (req, res) => {
         })
 })
 
+router.get("/projectid/:id", (req, res) => {
+    Tasks.getByProjectId(req.params.id)
+        .then(projectTasks => {
+            res.status(200).json(projectTasks);
+        })
+        .catch(err => {
+            res.status(500).json({error: "Could not get project tasks. Server error."})
+        })
+})
 
 module.exports = router;
