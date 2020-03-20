@@ -1,13 +1,14 @@
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('tasks').del()
     .then(function () {
       // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
+      return knex('tasks').insert([
+        {task_description: "Add legs to desktop", project_id: 1},
+        {task_description: "Screw in legs", project_id: 1, task_notes: "Requires screwdriver"},
+        {task_description: "Beat eggs", project_id: 2, task_completed: true, task_notes: "Requires egg beater"},
+        {task_description: "Add mix", project_id: 2}
       ]);
     });
 };
