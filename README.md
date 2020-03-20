@@ -39,13 +39,13 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
-
+  Relational databases are a type of database organized into tables of rows and columns. The tables are organized based on how the information each table records is related to information on other tables. SQL is a widely used programming language used to describe how relational databases will be structured when they are created as well as to write queries to store and retrieve information on the database.
 - [ ] Why do tables need a `primary key`?
-
+  A primary key is an attribute, usually a number but sometimes a string, that is unique on each record. Typically the database driver will enforce this uniqueness or ensure that a unique key is generated when the record is created. Since all other attributes may have the potential to contain duplicate information (duplicate names, location, etc) you can always rely on the primary key to find the exact record you are looking for.
 - [ ] What is the name given to a table column that references the primary key on another table.
-
+  A foreign key.
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
-
+  We need a bridge table, a table that exists just to describe the relationship between two other tables.
 ## Minimum Viable Product
 
 Take the steps necessary to complete the project from scratch. Start by initializing your project with a `package.json` and go from there.
